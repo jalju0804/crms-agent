@@ -1,0 +1,19 @@
+[Unit]
+Description=VM Metric Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vmmetric
+Group=vmmetric
+ExecStart=/usr/local/bin/vm-metric-gateway -config /etc/vm-metric-gateway/config.yaml
+Restart=always
+RestartSec=5s
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

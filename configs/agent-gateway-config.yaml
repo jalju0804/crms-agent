@@ -1,0 +1,21 @@
+interval: 60s
+output_mode: gateway
+output_path: /var/lib/vm-metric-agent/samples.jsonl
+root_path: /
+metadata_url: http://169.254.169.254/openstack/latest/meta_data.json
+gateway:
+  endpoint: http://127.0.0.1:8080
+  token: ""
+network_exclude_prefixes:
+  - lo
+  - veth
+  - cni
+  - flannel
+  - cilium
+  - docker
+  - br-
+disk_exclude_prefixes:
+  - loop
+  - ram
+  - fd
+  - sr

@@ -1,0 +1,21 @@
+[Unit]
+Description=VM Guest Metric Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vmmetric
+Group=vmmetric
+ExecStart=/usr/local/bin/vm-metric-agent -config /etc/vm-metric-agent/config.yaml
+Restart=always
+RestartSec=5s
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/vm-metric-agent
+
+[Install]
+WantedBy=multi-user.target
+

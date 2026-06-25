@@ -1,0 +1,7 @@
+listen_address: 127.0.0.1:8080
+auth_token: ""
+gnocchi:
+  endpoint: http://192.168.0.102:8041
+  username: admin
+  password: ""
+  archive_policy_name: vm_guest_usage_default
